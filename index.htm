@@ -28,10 +28,15 @@
       cursor: pointer;
       width: 60px;
       height: auto;
-      transition: transform 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-radius: 5px;
     }
     .regiones img:hover {
       transform: scale(1.05);
+    }
+    .regiones img.seleccionado {
+      box-shadow: 0 0 10px 5px rgba(0, 123, 255, 0.6);
+      background-color: #e6f0ff;
     }
     .info {
       padding: 20px;
@@ -51,22 +56,22 @@
   <h1>Regiones de Chile</h1>
   <div class="contenedor">
     <div class="regiones" id="regiones">
-      <img src="Regiones/1.png" alt="Arica y Parinacota" onclick="mostrarInfo(0)">
-      <img src="Regiones/2.png" alt="Tarapacá" onclick="mostrarInfo(1)">
-      <img src="Regiones/3.png" alt="Antofagasta" onclick="mostrarInfo(2)">
-      <img src="Regiones/4.png" alt="Atacama" onclick="mostrarInfo(3)">
-      <img src="Regiones/5.png" alt="Coquimbo" onclick="mostrarInfo(4)">
-      <img src="Regiones/6.png" alt="Valparaíso" onclick="mostrarInfo(5)">
-      <img src="Regiones/7.png" alt="Metropolitana" onclick="mostrarInfo(6)">
-      <img src="Regiones/8.png" alt="Libertador B. O'Higgins" onclick="mostrarInfo(7)">
-      <img src="Regiones/9.png" alt="Maule" onclick="mostrarInfo(8)">
-      <img src="Regiones/10.png" alt="Ñuble" onclick="mostrarInfo(9)">
-      <img src="Regiones/11.png" alt="Biobío" onclick="mostrarInfo(10)">
-      <img src="Regiones/12.png" alt="La Araucanía" onclick="mostrarInfo(11)">
-      <img src="Regiones/13.png" alt="Los Ríos" onclick="mostrarInfo(12)">
-      <img src="Regiones/14.png" alt="Los Lagos" onclick="mostrarInfo(13)">
-      <img src="Regiones/15.png" alt="Aysén" onclick="mostrarInfo(14)">
-      <img src="Regiones/16.png" alt="Magallanes y Antártica Chilena" onclick="mostrarInfo(15)">
+      <img src="Regiones/1.png" alt="Arica y Parinacota" onclick="mostrarInfo(0, this)">
+      <img src="Regiones/2.png" alt="Tarapacá" onclick="mostrarInfo(1, this)">
+      <img src="Regiones/3.png" alt="Antofagasta" onclick="mostrarInfo(2, this)">
+      <img src="Regiones/4.png" alt="Atacama" onclick="mostrarInfo(3, this)">
+      <img src="Regiones/5.png" alt="Coquimbo" onclick="mostrarInfo(4, this)">
+      <img src="Regiones/6.png" alt="Valparaíso" onclick="mostrarInfo(5, this)">
+      <img src="Regiones/7.png" alt="Metropolitana" onclick="mostrarInfo(6, this)">
+      <img src="Regiones/8.png" alt="Libertador B. O'Higgins" onclick="mostrarInfo(7, this)">
+      <img src="Regiones/9.png" alt="Maule" onclick="mostrarInfo(8, this)">
+      <img src="Regiones/10.png" alt="Ñuble" onclick="mostrarInfo(9, this)">
+      <img src="Regiones/11.png" alt="Biobío" onclick="mostrarInfo(10, this)">
+      <img src="Regiones/12.png" alt="La Araucanía" onclick="mostrarInfo(11, this)">
+      <img src="Regiones/13.png" alt="Los Ríos" onclick="mostrarInfo(12, this)">
+      <img src="Regiones/14.png" alt="Los Lagos" onclick="mostrarInfo(13, this)">
+      <img src="Regiones/15.png" alt="Aysén" onclick="mostrarInfo(14, this)">
+      <img src="Regiones/16.png" alt="Magallanes y Antártica Chilena" onclick="mostrarInfo(15, this)">
     </div>
     <div class="info" id="info">
       <h2 id="regionTitulo"></h2>
@@ -101,11 +106,22 @@
       "Huemul, Foca leopardo"
     ];
 
-    function mostrarInfo(index) {
+    let seleccionAnterior = null;
+
+    function mostrarInfo(index, imagen) {
       document.getElementById("regionTitulo").textContent = regiones[index];
       document.getElementById("regionDescripcion").textContent = `Especies en peligro de extinción: ${especies[index]}.`;
       const infoBox = document.getElementById("info");
       infoBox.style.display = "block";
+
+      // Remover clase "seleccionado" anterior
+      if (seleccionAnterior) {
+        seleccionAnterior.classList.remove("seleccionado");
+      }
+
+      // Agregar clase a la nueva imagen
+      imagen.classList.add("seleccionado");
+      seleccionAnterior = imagen;
     }
   </script>
 </body>
