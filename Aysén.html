@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Región Aysén
+  </title>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            /* Mantén este padding para que el contenido no toque los bordes de la ventana */
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1100px;
+            /* ¡CAMBIO AQUÍ! Aumentado de 900px a 1100px para más espacio horizontal */
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-box {
+            background-color: #ffe0b3;
+            border: 1px solid #ffcc80;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .section-box h2 {
+            color: #e65100;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .subsection-content {
+            background-color: #fff3e0;
+            border-left: 3px solid #ffab40;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .subsection-content h3 {
+            color: #ff8f00;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .animal-photos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .animal-photos img {
+            max-width: 320px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .animal-photos img:hover {
+            transform: scale(1.03);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .back-link a {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .back-link a:hover {
+            background-color: #0056b3;
+        }
+  </style>
+  <script>
+   function mostrarAnimal(nombre, descripcion, habitos, habitat, cualidades) {
+    document.getElementById("tituloAnimal").innerText = "Información: " + nombre;
+    document.getElementById("descripcionAnimal").innerText = descripcion;
+    document.getElementById("habitosAnimal").innerText = habitos;
+    document.getElementById("habitatAnimal").innerText = habitat;
+    document.getElementById("cualidadesAnimal").innerText = cualidades;
+}
+  </script>
+ </head>
+ <body>
+  <div class="container">
+   <h1>
+    Región de Aysén
+   </h1>
+   <div class="section-box">
+    <h2>
+     Fotos de Animales de la Región
+    </h2>
+    <div class="animal-photos">
+     <img alt="Huemul" onclick="mostrarAnimal('Huemul', 'El Huemul (Hippocamelus bisulcus) es un ciervo nativo y símbolo de la fauna chilena, presente en la cordillera patagónica.', 
+'De hábitos diurnos y alimentación herbívora, vive en grupos pequeños o en solitario, mostrando gran cautela ante humanos.', 
+'Habita bosques templados y matorrales de la zona andina de Ñuble a Magallanes, especialmente en zonas de difícil acceso.', 
+'Cuerpo robusto, pelaje denso, astas bifurcadas. En peligro de extinción por pérdida de hábitat y caza.')" src="img animal/huemul.png"/>
+     <img alt="Ñandú" onclick="mostrarAnimal('Ñandú', 'El Ñandú (Rhea pennata) es una gran ave corredora, endémica de la Patagonia chilena y argentina.', 
+'Activo durante el día, se alimenta de hierbas, semillas e insectos, formando grupos con otras aves.', 
+'Habita estepas, praderas y laderas abiertas desde Aysén a Magallanes, evitando zonas boscosas.', 
+'Gran tamaño, plumaje gris, alas pequeñas, pero veloces patas. Fundamental para el equilibrio del ecosistema patagónico.')" src="img animal/nandu.png"/>
+     <img alt="Moscardón Patagónico" onclick="mostrarAnimal('Moscardón Patagónico', 'El Moscardón Patagónico (Bombus dahlbomii) es el abejorro más grande de Sudamérica, nativo del sur de Chile y Argentina.', 
+'Diurno y solitario, poliniza flores nativas mientras se alimenta de néctar y polen.', 
+'Habita bosques templados, jardines y praderas de la Patagonia, desde Los Ríos hasta Magallanes.', 
+'Cuerpo robusto y peludo de color rojo anaranjado. Polinizador esencial, gravemente amenazado por especies invasoras.')" src="img animal/moscardon.png"/>
+    </div>
+   </div>
+   <div class="section-box">
+    <h2 id="tituloAnimal">
+     Información: Huemul
+    </h2>
+    <p id="descripcionAnimal">
+     El Huemul (Hippocamelus bisulcus) es un ciervo nativo y símbolo de la fauna chilena, presente en la cordillera patagónica.
+    </p>
+    <div class="subsection-content">
+     <h3>
+      Hábitos
+     </h3>
+     <p id="habitosAnimal">
+      De hábitos diurnos y alimentación herbívora, vive en grupos pequeños o en solitario, mostrando gran cautela ante humanos.
+     </p>
+    </div>
+    <div class="subsection-content">
+     <h3>
+      Hábitat
+     </h3>
+     <p id="habitatAnimal">
+      Habita bosques templados y matorrales de la zona andina de Ñuble a Magallanes, especialmente en zonas de difícil acceso.
+     </p>
+    </div>
+    <div class="subsection-content">
+     <h3>
+      Cualidades
+     </h3>
+     <p id="cualidadesAnimal">
+      Cuerpo robusto, pelaje denso, astas bifurcadas. En peligro de extinción por pérdida de hábitat y caza.
+     </p>
+    </div>
+   </div>
+   <div class="section-box">
+    <h2>
+     Estadísticas de Aysén
+    </h2>
+    <div class="subsection-content">
+     <h3>
+      % de Desertificación
+     </h3>
+     <p>
+      La Región de Aysén, caracterizada por un clima frío y húmedo con abundantes precipitaciones en muchas
+                    de sus áreas, no enfrenta la desertificación en el sentido tradicional de las regiones áridas. Sin
+                    embargo, sí experimenta procesos de degradación de suelos y pérdida de cobertura vegetal,
+                    especialmente en la estepa patagónica oriental debido al sobrepastoreo y las condiciones climáticas
+                    más secas. Se estima que aproximadamente el XX% de su territorio presenta algún grado de degradación
+                    ambiental relevante, afectando la resiliencia de sus ecosistemas.
+     </p>
+    </div>
+    <div class="subsection-content">
+     <h3>
+      % de Deforestación
+     </h3>
+     <p>
+      Aysén es hogar de vastas extensiones de bosques templados fríos y milenarios, que son un tesoro de
+                    biodiversidad. Históricamente, la región ha sufrido pérdida de bosque nativo debido a actividades de
+                    deforestación para la ganadería, la agricultura y la explotación forestal, aunque a menor escala en
+                    comparación con otras regiones del centro-sur. La principal amenaza actual es la fragmentación de
+                    estos bosques y los incendios forestales, que pueden ser devastadores en las condiciones climáticas
+                    de la región.
+     </p>
+    </div>
+    <div class="subsection-content">
+     <h3>
+      Calidad del Aire
+     </h3>
+     <p>
+      La calidad del aire en la Región de Aysén es una preocupación significativa en sus principales
+                    centros urbanos durante los meses de invierno (mayo a agosto). Ciudades como Coyhaique experimentan
+                    frecuentes y severos episodios de alta contaminación atmosférica, siendo consistentemente una de las
+                    ciudades con peor calidad del aire en Chile durante esta época. La principal fuente de emisión es,
+                    abrumadoramente, la calefacción residencial a leña (particularmente leña húmeda), que libera enormes
+                    cantidades de material particulado fino (MP2.5). A esto se suman en menor medida las emisiones del
+                    transporte vehicular. Las condiciones geográficas y climáticas invernales (inversiones térmicas,
+                    poco viento) favorecen la acumulación de estos contaminantes, afectando la salud pública.
+     </p>
+    </div>
+   </div>
+   <div class="section-box">
+    <h2>
+     Tips o Consejos para la Visita y Conservación
+    </h2>
+    <div class="subsection-content">
+     <h3>
+      Consejo 1: Observación Distante y en Silencio Absoluto
+     </h3>
+     <p>
+      Si tienes la fortuna de avistar un huemul, mantén siempre una distancia muy prudente (al menos 50
+                    metros). Son animales extremadamente tímidos y cualquier acercamiento puede generarles un estrés
+                    innecesario, haciéndolos huir y gastar energía valiosa, o separarse de sus crías. Usa binoculares o
+                    un buen lente fotográfico y disfruta su presencia sin perturbarlos. Evita ruidos fuertes o
+                    movimientos bruscos.
+     </p>
+    </div>
+    <div class="subsection-content">
+     <h3>
+      Consejo 2: ¡Nunca, Bajo Ninguna Circunstancia, Alimentes al Huemul!
+     </h3>
+     <p>
+      Ofrecer alimento a los huemules (o a cualquier fauna silvestre) es una de las prácticas más dañinas.
+                    Altera su dieta natural, los expone a enfermedades por alimentos no adecuados, los vuelve
+                    dependientes de los humanos y los atrae a zonas peligrosas como carreteras o asentamientos,
+                    aumentando el riesgo de atropellos o ataques de perros.
+     </p>
+    </div>
+    <div class="subsection-content">
+     <h3>
+      Consejo 3: Conduce con Máxima Precaución en Rutas Rurales y Forestales
+     </h3>
+     <p>
+      Los huemules suelen cruzar caminos, especialmente al amanecer y anochecer, en busca de alimento o
+                    refugio. Reduce drásticamente la velocidad en zonas señalizadas o donde se tenga conocimiento de la
+                    presencia de fauna. Un atropello es devastador para la especie.
+     </p>
+    </div>
+   </div>
+   <div class="back-link">
+    <a href="index.html">
+     Volver al Mapa de Regiones
+    </a>
+   </div>
+  </div>
+ </body>
+</html>

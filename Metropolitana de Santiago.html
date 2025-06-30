@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Región Metropolitana de Santiago
+  </title>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            /* Mantén este padding para que el contenido no toque los bordes de la ventana */
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1100px;
+            /* ¡CAMBIO AQUÍ! Aumentado de 900px a 1100px para más espacio horizontal */
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-box {
+            background-color: #ffe0b3;
+            border: 1px solid #ffcc80;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .section-box h2 {
+            color: #e65100;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .subsection-content {
+            background-color: #fff3e0;
+            border-left: 3px solid #ffab40;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .subsection-content h3 {
+            color: #ff8f00;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .animal-photos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .animal-photos img {
+            max-width: 320px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .animal-photos img:hover {
+            transform: scale(1.03);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .back-link a {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .back-link a:hover {
+            background-color: #0056b3;
+        }
+  </style>
+  <script>
+   function mostrarAnimal(nombre, descripcion, habitos, habitat, cualidades) {
+    document.getElementById("tituloAnimal").innerText = "Información: " + nombre;
+    document.getElementById("descripcionAnimal").innerText = descripcion;
+    document.getElementById("habitosAnimal").innerText = habitos;
+    document.getElementById("habitatAnimal").innerText = habitat;
+    document.getElementById("cualidadesAnimal").innerText = cualidades;
+}
+  </script>
+ </head>
+ <body>
+  <div class="container">
+   <h1>
+    Región Metropolitana de Santiago
+   </h1>
+   <div class="section-box">
+    <h2>
+     Foto del Animal de la Región
+    </h2>
+    <div class="animal-photos">
+     <img alt="Lagartija de Hernán Núñez" onclick="mostrarAnimal('Lagartija de Hernán Núñez', 'La Lagartija de Hernán Núñez (Liolaemus nunezi) es un reptil endémico de la zona central de Chile.', 
+'Activa durante el día, se alimenta de insectos y pequeños artrópodos, y se refugia entre rocas.', 
+'Habita zonas rocosas y de matorral esclerófilo en la cordillera de la costa y precordillera de la Región Metropolitana.', 
+'De tamaño pequeño, ágil, de coloración críptica, contribuye al control de plagas en su ecosistema.')" src="img animal/lagartija.png"/>
+     <img alt="Picaflor de Juan Fernández" onclick="mostrarAnimal('Picaflor de Juan Fernández', 'El Picaflor de Juan Fernández (Sephanoides fernandensis) es un colibrí endémico y en peligro crítico de extinción.', 
+'Activo durante el día, se alimenta de néctar y pequeños insectos, muy territorial en floraciones.', 
+'Habita exclusivamente en el Archipiélago Juan Fernández, en bosques húmedos con flores nativas.', 
+'Colorido y pequeño, con un vuelo rápido y suspendido. Polinizador clave para el ecosistema isleño.')" src="img animal/picaflorrm.png"/>
+     <img alt="Huemul" onclick="mostrarAnimal('Huemul', 'El Huemul (Hippocamelus bisulcus) es un ciervo nativo de la zona andina de Chile y Argentina, en peligro de extinción.', 
+'Herbívoro y de hábitos tranquilos, se alimenta de hierbas y brotes en bosques cordilleranos.', 
+'Habita zonas montañosas de difícil acceso en la cordillera de los Andes, en ambientes fríos y húmedos.', 
+'De cuerpo robusto, orejas grandes y pelaje grueso. Es símbolo nacional y especie protegida por ley.')" src="img animal/huemul.png"/>
+    </div>
+   </div>
+   <div class="section-box">
+    <h2 id="tituloAnimal">
+     Información: Lagartija de Hernán Núñez
+    </h2>
+    <p id="descripcionAnimal">
+     La Lagartija de Hernán Núñez (Liolaemus nunezi) es un reptil endémico de la zona central de Chile.
+    </p>
+    <div class="subsection-content">
+     <h3>
+      Hábitos
+     </h3>
+     <p id="habitosAnimal">
+      Activa durante el día, se alimenta de insectos y pequeños artrópodos, y se refugia entre rocas.
+     </p>
+    </div>
+    <div class="subsection-content">
+     <h3>
+      Hábitat
+     </h3>
+     <p id="habitatAnimal">
+      Habita zonas rocosas y de matorral esclerófilo en la cordillera de la costa y precordillera de la Región Metropolitana.
+     </p>
+    </div>
+    <div class="subsection-content">
+     <h3>
+      Cualidades
+     </h3>
+     <p id="cualidadesAnimal">
+      De tamaño pequeño, ágil, de coloración críptica, contribuye al control de plagas en su ecosistema.
+     </p>
+    </div>
+   </div>
+   <div class="section-box">
+    <h2>
+     Estadísticas Metropolitana de Santiago
+    </h2>
+    <div class="subsection-content">
+     <h3>
+      % de Desertificación
+     </h3>
+     <p>
+      La Región Metropolitana, si bien no es un desierto puro, presenta un clima mediterráneo con una
+                    marcada sequía que se ha intensificado en los últimos años. Esto ha generado y acentuado procesos de
+                    desertificación, especialmente en las zonas de secano interior y en los bordes de la precordillera
+                    andina y de la Cordillera de la Costa. Factores como el cambio climático, la escasez hídrica y el
+                    uso intensivo del suelo contribuyen a que se estime que aproximadamente el XX% de su territorio
+                    presenta algún grado de desertificación o degradación del suelo.
+     </p>
+    </div>
+    <div class="subsection-content">
+     <h3>
+      % de Deforestación
+     </h3>
+     <p>
+      La Región Metropolitana ha sufrido una alta tasa de deforestación y fragmentación de su vegetación
+                    nativa histórica, principalmente el bosque y matorral esclerófilo. Esto se debe principalmente a la
+                    expansión urbana, agrícola e industrial, así como a los incendios forestales. La pérdida de estos
+                    ecosistemas nativos es un problema ambiental crítico, impactando la biodiversidad, la regulación
+                    hídrica y la calidad del aire de la región.
+     </p>
+    </div>
+    <div class="subsection-content">
+     <h3>
+      Calidad del Aire
+     </h3>
+     <p>
+      La calidad del aire es uno de los principales desafíos ambientales de la Región Metropolitana.
+                    Santiago, como una gran cuenca rodeada de montañas, experimenta frecuentemente episodios de alta
+                    contaminación atmosférica, especialmente durante los meses de invierno (mayo a agosto). Las
+                    principales fuentes de emisión incluyen el transporte vehicular (particulado fino y gases), la
+                    calefacción residencial a leña (en zonas periféricas), y en menor medida, algunas fuentes
+                    industriales. Aunque existen planes de descontaminación, la calidad del aire es un monitoreo
+                    constante y un problema de salud pública relevante en la capital.
+     </p>
+    </div>
+   </div>
+   <div class="section-box">
+    <h2>
+     Tips o Consejos para la Visita y Conservación
+    </h2>
+    <div class="subsection-content">
+     <h3>
+      Consejo 1: Respeta Estrictamente sus Sitios de Nidificación (Barrancos)
+     </h3>
+     <p>
+      Los barrancos donde anidan los loros Tricahue son sus hogares y lugares de reproducción. Nunca te
+                    acerques a los nidos, intentes explorarlos o dañes las paredes de tierra. La perturbación en estas
+                    zonas es una de las principales amenazas para las colonias. Permanece en senderos o miradores
+                    designados.
+     </p>
+    </div>
+    <div class="subsection-content">
+     <h3>
+      Consejo 2: No Compres ni Fomentes el Tráfico Ilegal
+     </h3>
+     <p>
+      SEl Loro Tricahue, aunque recuperándose, fue históricamente víctima del comercio ilegal de mascotas.
+                    Nunca compres loros silvestres ni fomentes este mercado negro. Si conoces o sospechas de tráfico de
+                    fauna, denúncialo inmediatamente a las autoridades (SAG, PDI o CONAF en Chile). Su lugar es en la
+                    naturaleza.
+     </p>
+    </div>
+    <div class="subsection-content">
+     <h3>
+      Consejo 3: ¡No Intentes Alimentarlos ni Interactuar Directamente!
+     </h3>
+     <p>
+      Ofrecer alimento a los loros Tricahue altera su dieta natural y puede volverlos dependientes de los
+                    humanos, lo que los expone a peligros como atropellos, ataques de mascotas o la captura ilegal.
+                    Permíteles buscar su propio alimento en su entorno natural.
+     </p>
+    </div>
+   </div>
+   <div class="back-link">
+    <a href="index.html">
+     Volver al Mapa de Regiones
+    </a>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   BioMap
+  </title>
+  <style>
+   body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: whitesmoke;
+      /*Fondo*/
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* Centra el contenido horizontalmente */
+      min-height: 100vh;
+      /* Asegura que el body ocupe al menos toda la altura de la ventana */
+      margin: 0;
+    }
+
+
+    .header-box h2 {
+      margin-top: 0;
+      font-size: 2em;
+    }
+
+    .header-box p {
+      font-size: 1.1em;
+      line-height: 1.5;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .mapa-vertical-regiones {
+      display: flex;
+      flex-direction: column;
+      /* Apila los "items" de región verticalmente */
+      align-items: flex-start;
+      /* Alinea los items a la izquierda para que el texto no se vea "flotando" */
+      gap: 10px;
+      /* Espacio entre cada item de región (imagen + nombre) */
+      padding: 50px;
+      /*Agrande el cuadro de las regiones*/
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .region-item {
+      /* Nuevo estilo para cada contenedor de imagen y nombre */
+      display: flex;
+      /* Permite que la imagen y el texto estén lado a lado */
+      align-items: center;
+      /* Alinea verticalmente la imagen y el texto */
+      gap: 10px;
+      /* Espacio entre la imagen y el nombre */
+      text-decoration: none;
+      /* Quita el subrayado del enlace */
+      color: #333;
+      /* Color del texto del nombre */
+      padding: 5px 10px;
+      /* Pequeño padding alrededor del item */
+      border-radius: 5px;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .region-item:hover {
+      background-color: #e9ecef;
+      /* Ligero cambio de fondo al pasar el ratón */
+      transform: translateX(10px);
+      /* Desliza ligeramente a la derecha al pasar el ratón */
+    }
+
+    .region-item img {
+      width: 120px;
+      /* Ancho de la imagen de la región (ajustado para que quepa bien con texto) */
+      height: auto;
+      /* Mantiene la proporción de la imagen */
+      display: block;
+      /*  border: 1px solid #ddd;
+      /* Un borde sutil para la imagen */
+      /*border-radius: 3px;*/
+    }
+
+    .region-item span {
+      /* Estilo para el nombre de la región */
+      font-weight: bold;
+      font-size: 1.5em;
+      white-space: nowrap;
+      /* Evita que el nombre se rompa en varias líneas */
+    }
+  </style>
+ </head>
+ <body>
+  <h1>
+   BIOMAP
+  </h1>
+  <h2>
+   Explora las Regiones de Chile y sus especies en peligro de extinción
+  </h2>
+  <div class="mapa-vertical-regiones">
+   <a class="region-item" href="Arica y Parinacota.html">
+    <img alt="Arica y Parinacota" src="img/1.png"/>
+    <span>
+     Arica y Parinacota
+    </span>
+   </a>
+   <a class="region-item" href="Tarapaca.html">
+    <img alt="Tarapacá" src="img/2.png"/>
+    <span>
+     Tarapacá
+    </span>
+   </a>
+   <a class="region-item" href="Antofagasta.html">
+    <img alt="Antofagasta" src="img/3.png"/>
+    <span>
+     Antofagasta
+    </span>
+   </a>
+   <a class="region-item" href="Atacama.html">
+    <img alt="Atacama" src="img/4.png"/>
+    <span>
+     Atacama
+    </span>
+   </a>
+   <a class="region-item" href="Coquimbo.html">
+    <img alt="Coquimbo" src="img/5.png"/>
+    <span>
+     Coquimbo
+    </span>
+   </a>
+   <a class="region-item" href="Valparaíso.html">
+    <img alt="Valparaíso" src="img/6.png"/>
+    <span>
+     Valparaíso
+    </span>
+   </a>
+   <a class="region-item" href="Metropolitana de Santiago.html">
+    <img alt="Metropolitana" src="img/7.png"/>
+    <span>
+     Metropolitana
+    </span>
+   </a>
+   <a class="region-item" href="O'Higgins.html">
+    <img alt="Libertador B. O'Higgins" src="img/8.png"/>
+    <span>
+     O'Higgins
+    </span>
+   </a>
+   <a class="region-item" href="Maule.html">
+    <img alt="Maule" src="img/9.png"/>
+    <span>
+     Maule
+    </span>
+   </a>
+   <a class="region-item" href="Ñuble.html">
+    <img alt="Ñuble" src="img/10.png"/>
+    <span>
+     Ñuble
+    </span>
+   </a>
+   <a class="region-item" href="Biobío.html">
+    <img alt="Biobío" src="img/11.png"/>
+    <span>
+     Biobío
+    </span>
+   </a>
+   <a class="region-item" href="Araucanía.html">
+    <img alt="La Araucanía" src="img/12.png"/>
+    <span>
+     La Araucanía
+    </span>
+   </a>
+   <a class="region-item" href="Los Ríos.html">
+    <img alt="Los Ríos" src="img/13.png"/>
+    <span>
+     Los Ríos
+    </span>
+   </a>
+   <a class="region-item" href="Los Lagos.html">
+    <img alt="Los Lagos" src="img/14.png"/>
+    <span>
+     Los Lagos
+    </span>
+   </a>
+   <a class="region-item" href="Aysén.html">
+    <img alt="Aysén" src="img/15.png"/>
+    <span>
+     Aysén
+    </span>
+   </a>
+   <a class="region-item" href="Magallanes y la Antártica Chilena.html">
+    <img alt="Magallanes y Antártica Chilena" src="img/16.png"/>
+    <span>
+     Magallanes y Antártica Chilena
+    </span>
+   </a>
+  </div>
+  <div class="section-box" style="margin-top: 40px;">
+   <h2>
+    Bibliografía y Fuentes
+   </h2>
+   <ul>
+    <li>
+     <a href="https://www.chilebosque.cl" target="_blank">
+      www.chilebosque.cl
+     </a>
+    </li>
+    <li>
+     <a href="https://www.biodiversidadchile.cl" target="_blank">
+      www.biodiversidadchile.cl
+     </a>
+    </li>
+    <li>
+     <a href="https://especies.mma.gob.cl" target="_blank">
+      especies.mma.gob.cl
+     </a>
+    </li>
+    <li>
+     <a href="https://exploraturismo.subturismo.gob.cl/fauna-nativa-de-chile/" target="_blank">
+      Fauna Nativa de Chile - Subsecretaría de Turismo
+     </a>
+    </li>
+    <li>
+     <a href="https://www.forestalaconcagua.cl/publicaciones-fauna-nativa.html" target="_blank">
+      Forestal Aconcagua - Publicaciones sobre Fauna
+     </a>
+    </li>
+   </ul>
+  </div>
+ </body>
+</html>
